@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS TYPING ANIMATION</title>
+</head>
+<body>
+      <h1 align="center" id="text">WELCOME TO TECHNICAL POINT SOLUTION</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript">
+   /*
+   <!-------------------------ANIMATION USING JAVASCRIPT OR JQUERY START HERE--------------------------------->
+   */
+      function typingAnimation(id,speed,repeat=false){
+      	console.log('Automated animation function start......');
+      	var x = document.getElementById(id).innerText;
+      	var y = document.getElementById(id);
+      	var i=0;
+      	$('#'+id).text("");
+      	var timer=setInterval(function(){
+             //console.log(x[i]);
+             $('#'+id).append('<span>'+x[i]+'</span>');
+             i++;
+	            if (i == x.length && repeat==false)
+	            {
+	              clearInterval(timer);
+	            }else if (x.length < i && repeat==true)
+	            {
+	               $('#'+id).text("");
+	               i=0;
+	            }
+      	},speed);
+      }
+      typingAnimation('text',100,true);
+       /*
+   <!-------------------------ANIMATION USING JAVASCRIPT OR JQUERY START HERE--------------------------------->
+   */
+    </script>
+</body>
+</html>
